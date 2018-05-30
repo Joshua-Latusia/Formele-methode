@@ -47,7 +47,9 @@
     <Compile Include="FileDotEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegExp.cs" />
     <Compile Include="TestAutomata.cs" />
+    <Compile Include="TestRegExp.cs" />
     <Compile Include="Transition.cs" />
     <Compile Include="TransitionComparator.cs" />
   </ItemGroup>
