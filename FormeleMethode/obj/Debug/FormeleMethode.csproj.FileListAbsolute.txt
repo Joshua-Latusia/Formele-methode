@@ -1,0 +1,202 @@
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\FormeleMethode.exe.config
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\FormeleMethode.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\FormeleMethode.pdb
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\obj\Debug\FormeleMethode.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\obj\Debug\FormeleMethode.csproj.CoreCompileInputs.cache
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\obj\Debug\FormeleMethode.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\obj\Debug\FormeleMethode.pdb
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\acyclic.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\ann.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\bcomps.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\ccomps.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\cdt.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\cgraph.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\circo.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\dijkstra.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\dot.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\dotty.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\exparse.h
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\fc-cache.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\fc-cat.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\fc-list.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\fc-match.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\fdp.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\fontconfig.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\fontconfig_fix.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\freetype6.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gc.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\getopt.h
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\glut32.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gml2gv.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\graphml2gv.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gv2gml.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvc.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvcolor.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvedit.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\GVedit.html
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvgen.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvmap.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvpack.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvplugin_core.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvplugin_dot_layout.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvplugin_gd.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvplugin_gdiplus.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvplugin_neato_layout.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvplugin_pango.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gvpr.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\gxl2gv.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\iconv.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\intl.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\jpeg62.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\lefty.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libatk-1.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libcairo-2.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libexpat-1.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libexpat.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libfontconfig-1.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libfreetype-6.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgdk-win32-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgdkglext-win32-1.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgdk_pixbuf-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgio-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libglade-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libglib-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgmodule-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgobject-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgthread-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgtk-win32-2.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libgtkglext-win32-1.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libltdl-3.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libpango-1.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libpangocairo-1.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libpangoft2-1.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libpangowin32-1.0-0.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libpng12.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libpng14-14.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\libxml2.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\lneato.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\ltdl.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\mingle.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\mm2gv.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\neato.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\New Text Document.txt
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\nop.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\osage.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\patchwork.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\Pathplan.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\props.txt
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\prune.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\QtCore4.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\QtGui4.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\sccmap.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\sfdp.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\smyrna.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\tred.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\twopi.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\unflatten.exe
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\vmalloc.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\zlib1.dll
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\config6
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\Graphviz.ini
+C:\Users\Joshua\source\repos\FormeleMethode\FormeleMethode\bin\Debug\External\Settings.ini
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\acyclic.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\ann.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\bcomps.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\ccomps.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\cdt.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\cgraph.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\circo.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\dijkstra.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\dot.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\dotty.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\exparse.h
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\fc-cache.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\fc-cat.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\fc-list.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\fc-match.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\fdp.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\fontconfig.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\fontconfig_fix.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\freetype6.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gc.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\getopt.h
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\glut32.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gml2gv.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\graphml2gv.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gv2gml.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvc.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvcolor.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvedit.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\GVedit.html
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvgen.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvmap.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvpack.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvplugin_core.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvplugin_dot_layout.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvplugin_gd.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvplugin_gdiplus.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvplugin_neato_layout.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvplugin_pango.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gvpr.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\gxl2gv.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\iconv.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\intl.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\jpeg62.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\lefty.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libatk-1.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libcairo-2.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libexpat-1.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libexpat.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libfontconfig-1.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libfreetype-6.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgdk-win32-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgdkglext-win32-1.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgdk_pixbuf-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgio-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libglade-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libglib-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgmodule-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgobject-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgthread-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgtk-win32-2.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libgtkglext-win32-1.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libltdl-3.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libpango-1.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libpangocairo-1.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libpangoft2-1.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libpangowin32-1.0-0.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libpng12.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libpng14-14.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\libxml2.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\lneato.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\ltdl.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\mingle.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\mm2gv.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\neato.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\New Text Document.txt
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\nop.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\osage.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\patchwork.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\Pathplan.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\props.txt
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\prune.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\QtCore4.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\QtGui4.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\sccmap.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\sfdp.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\smyrna.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\tred.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\twopi.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\unflatten.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\vmalloc.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\zlib1.dll
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\config6
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\Graphviz.ini
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\Settings.ini
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\FormeleMethode.exe.config
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\FormeleMethode.exe
+C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\FormeleMethode.pdb
+C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.csprojResolveAssemblyReference.cache
+C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.csproj.CoreCompileInputs.cache
+C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.exe
+C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.pdb

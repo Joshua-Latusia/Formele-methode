@@ -1,0 +1,29 @@
+digraph {
+ "" [shape=none]
+ "F"  [shape=doublecircle]
+
+"" -> "S"
+"E" -> "J"[label="b", weight="b"];
+"J" -> "K"[label="a", weight="a"];
+"K" -> "G"[label="a", weight="a"];
+"H" -> "L"[label="b", weight="b"];
+"L" -> "I"[label="b", weight="b"];
+"C" -> "E"[label="$", weight="$"];
+"G" -> "D"[label="$", weight="$"];
+"C" -> "H"[label="$", weight="$"];
+"I" -> "D"[label="$", weight="$"];
+"S" -> "C"[label="$", weight="$"];
+"S" -> "A"[label="$", weight="$"];
+"D" -> "A"[label="$", weight="$"];
+"O" -> "P"[label="a", weight="a"];
+"Q" -> "R"[label="b", weight="b"];
+"M" -> "O"[label="$", weight="$"];
+"P" -> "N"[label="$", weight="$"];
+"M" -> "Q"[label="$", weight="$"];
+"R" -> "N"[label="$", weight="$"];
+"B" -> "M"[label="$", weight="$"];
+"B" -> "F"[label="$", weight="$"];
+"N" -> "M"[label="$", weight="$"];
+"N" -> "F"[label="$", weight="$"];
+"A" -> "B"[label="$", weight="$"];
+}
