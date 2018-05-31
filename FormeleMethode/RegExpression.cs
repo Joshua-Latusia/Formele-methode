@@ -121,12 +121,10 @@ namespace FormeleMethode
 
 			switch (this.o)
 			{
-				// TODO comment
 				case Operator.ONE:
 					languageRes.Add(terminals); 
 					break;
 
-				// Add both possibilities to the list
 				case Operator.OR:
 					lanLeft = left == null ? emptyLan : left.GetLanguage(maxSteps - 1);
 					lanRight = right == null ? emptyLan : right.GetLanguage(maxSteps - 1);
@@ -134,7 +132,6 @@ namespace FormeleMethode
 					languageRes.UnionWith(lanRight);
 					break;
 
-				// TODO comment
 				case Operator.DOT:
 					lanLeft = left == null ? emptyLan : left.GetLanguage(maxSteps - 1);
 					lanRight = right == null ? emptyLan : right.GetLanguage(maxSteps - 1);
@@ -145,7 +142,6 @@ namespace FormeleMethode
 							languageRes.Add(s1 + s2);
 						}
 					}
-					// implement
 					break;
 
 				// Star(*) and (+) can be worked out in the same way
@@ -192,8 +188,6 @@ namespace FormeleMethode
 		}
 
 	}
-
-	
 
 	// Comperator for  comparing length
 	public class LengthComperator : IComparer<string>
