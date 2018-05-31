@@ -104,6 +104,46 @@ namespace FormeleMethode
 			return res;
 		}
 
+
+		/// <summary>
+		/// Gets all the words that are not in the language.
+		/// </summary>
+		/// <param name="maxSteps">The maximum steps.</param>
+		/// <returns></returns>
+		public List<string> GetNotLanguage(int maxSteps)
+		{
+			// Gets the language
+			SortedSet<string> language = GetLanguage(maxSteps);
+			List<string> combinations = new List<string>();
+			SortedSet<string> notLangue = new SortedSet<string>();
+			List<char> alphabeth = new List<char>();
+
+			// Get longest string length - 1 based
+			if (language.Count <= 0)
+				return combinations;
+
+			int longestString = language.Last().Length;
+
+			// Gets the different chars in alphabeth
+			alphabeth = language.Last().ToCharArray().Distinct().ToList();
+
+			// Generate all possible strings upto the longestString length
+			var q = alphabeth.Select(x => x.ToString());
+			for (int i = 0; i < longestString - 1; i++)
+				q = q.SelectMany(x => alphabeth, (x, y) => x + y);
+
+			// Convert to list
+			combinations = q.ToList();
+
+			// Subtract language from all possible things
+			combinations.RemoveAll(x => language.Contains(x));
+
+
+			// Return not language
+			return combinations;
+
+		}
+
 		/// <summary>
 		/// Gets the language.
 		/// </summary>

@@ -76,7 +76,7 @@ namespace FormeleMethode
 			Console.WriteLine($"\nExample NDFA1 is a dfa = {exmapleNDFA1.IsDFA()}");
 
 			// EClosure test 
-			Console.WriteLine($"NDFA1 eClosure should be = A,B,C,E,F,H,M,O,Q  From state S\n " +
+			Console.WriteLine($"NDFA1 eClosure should be = A,B,C,E,F,H,M,O,Q,S  From state S\n " +
 							  $"Result = {String.Join(",",exmapleNDFA1.EClosure("S").OrderBy(q => q).ToList())}\n");
 			Console.WriteLine($"NDFA1 eClosure should be = C,E,H  From state C\n " +
 							  $"Result = {String.Join(",", exmapleNDFA1.EClosure("C").OrderBy(q => q).ToList())}\n");

@@ -40,6 +40,8 @@ namespace FormeleMethode
 		{
 			Console.WriteLine("taal van (baa):\n");
 			expr1.PrintLanguageAsString(expr1.GetLanguage(4));
+			Console.WriteLine("\nAlles wat taal (baa) niet accepteerd:\n");
+			Console.WriteLine(String.Join(",", expr1.GetNotLanguage(3).OrderBy(x => x)));
 
 			Console.WriteLine("\ntaal van (bb):\n");
 			expr2.PrintLanguageAsString(expr2.GetLanguage(4));
@@ -49,9 +51,13 @@ namespace FormeleMethode
 
 			Console.WriteLine("\ntaal van (a|b)*:\n");
 			all.PrintLanguageAsString(all.GetLanguage(4));
+			Console.WriteLine("\nAlles wat taal (a|b)* niet accepteerd:\n");
+			Console.WriteLine(String.Join(",", all.GetNotLanguage(4).OrderBy(x => x)));
 
 			Console.WriteLine("\ntaal van (baa | bb)+:\n");
-			expr4.PrintLanguageAsString(expr4.GetLanguage(4));
+			expr4.PrintLanguageAsString(expr4.GetLanguage(3)); // TODO fix doesn't work with 2 idk why..
+			Console.WriteLine("\nAlles wat taal (baa | bb)+ niet accepteerd:\n");
+			Console.WriteLine(String.Join(",", expr4.GetNotLanguage(3).OrderBy(x => x)));
 
 			Console.WriteLine("\ntaal van (baa | bb)+ (a|b)*:\n");
 			expr5.PrintLanguageAsString(expr5.GetLanguage(5));
