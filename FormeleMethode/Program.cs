@@ -73,20 +73,31 @@ namespace FormeleMethode
 			// With epsilon
 			Automata<string> exmapleNDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample1");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample1", "ndfaExample1Pic");
-			Console.WriteLine($"Example NDFA1 is a dfa = {exmapleNDFA1.IsDFA()}");
+			Console.WriteLine($"\nExample NDFA1 is a dfa = {exmapleNDFA1.IsDFA()}");
+
+			// EClosure test 
+			Console.WriteLine($"NDFA1 eClosure should be = A,B,C,E,F,H,M,O,Q  From state S\n " +
+							  $"Result = {String.Join(",",exmapleNDFA1.EClosure("S").OrderBy(q => q).ToList())}\n");
+			Console.WriteLine($"NDFA1 eClosure should be = C,E,H  From state C\n " +
+							  $"Result = {String.Join(",", exmapleNDFA1.EClosure("C").OrderBy(q => q).ToList())}\n");
+
 
 			Automata<string> exmapleNDFA2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample2");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample2", "ndfaExample2Pic");
-			Console.WriteLine($"Example NDFA2 is a dfa = {exmapleNDFA2.IsDFA()}");
+			Console.WriteLine($"\nExample NDFA2 is a dfa = {exmapleNDFA2.IsDFA()}");
 
 			Automata<string> exmapleNDFA3 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample3");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample3", "ndfaExample3Pic");
-			Console.WriteLine($"Example NDFA3 is a dfa = {exmapleNDFA3.IsDFA()}");
+			Console.WriteLine($"\nExample NDFA3 is a dfa = {exmapleNDFA3.IsDFA()}");
 
 			// With epsilon
 			Automata<string> exmapleNDFA4 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample4");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample4", "ndfaExample4Pic");
-			Console.WriteLine($"Example NDFA4 is a dfa = {exmapleNDFA4.IsDFA()}");
+			Console.WriteLine($"\nExample NDFA4 is a dfa = {exmapleNDFA4.IsDFA()}");
+
+			// EClosure test 
+			Console.WriteLine($"NDFA4 eClosure should be = B,C \n " +
+							  $"Result = {String.Join(",", exmapleNDFA4.EClosure("B").OrderBy(q => q).ToList())}\n");
 
 		}
 

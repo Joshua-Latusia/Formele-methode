@@ -3,7 +3,7 @@ digraph {
  "C"  [shape=doublecircle]
  "E"  [shape=doublecircle]
 
-"" -> "q0"
+"" -> "A"
 "A" -> "B"[label="b", weight="b"];
 "A" -> "C"[label="a", weight="a"];
 "A" -> "C"[label="b", weight="b"];

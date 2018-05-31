@@ -287,21 +287,29 @@ namespace FormeleMethode
 		/// <returns></returns>
 		public List<T> EClosure(T state)
 		{
-			if (!IsDFA())
+			List<T> reachableStates = new List<T>();
+
+			// Loop through transitions untill transition.from == state
+			foreach (Transition<T> trans in transitions)
 			{
-				// Loop through transitions untill transition.from == state
-
-				// Check if symbol == epsilon
-
-				// Add to list
-
-				return new List<T>();
+				// If we found a transition with fromstate == state
+				if(trans.GetFromState().Equals(state))
+				{
+					// If epsilon add ToState to list and look for all children
+					if (trans.GetSymbol() == '$')
+					{
+						reachableStates.Add(trans.GetFromState());
+						reachableStates.Add(trans.GetToState());
+						reachableStates.AddRange(EClosure(trans.GetToState()));
+					}
+					else // Else add fromstate since its the last node
+					{
+						reachableStates.Add(trans.GetFromState());
+					}
+				}
 			}
-			else
-			{
-				Console.WriteLine("Error AutomatA is not a NDFA so eclosure is not possible");
-				return new List<T>();
-			}
+
+			return reachableStates.Distinct().ToList();
 		}
 
 		public void Delta()
