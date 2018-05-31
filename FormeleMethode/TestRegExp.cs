@@ -8,38 +8,50 @@ namespace FormeleMethode
 {
 	public class TestRegExp
 	{
-		private RegExp expr1, expr2, expr3, expr4, expr5, a, b, all; // TODO fix RegExp class reference
+		private RegExpression expr1, expr2, expr3, expr4, expr5, a, b, all;
 
 		public TestRegExp()
 		{
-			a = new RegExp("a");
-			b = new RegExp("b");
+			a = new RegExpression("a");
+			b = new RegExpression("b");
 
 			// expr1: "baa"
-			expr1 = new RegExp("baa");
+			expr1 = new RegExpression("baa");
 			// expr2: "bb"
-			expr2 = new RegExp("bb");
+			expr2 = new RegExpression("bb");
 			// expr3: "baa | baa"
-			expr3 = expr1.or(expr2);
+			expr3 = expr1.Or(expr2);
 
 			// all: "(a|b)*"
-			all = (a.or(b)).star();
+			all = (a.Or(b)).Star();
 
 			// expr4: "(baa | baa)+"
-			expr4 = expr3.plus();
+			expr4 = expr3.Plus();
 			// expr5: "(baa | baa)+ (a|b)*"
-			expr5 = expr4.dot(all);
+			expr5 = expr4.Dot(all);
 		}
 
-		public void testLanguage()
+		public void TestLanguage()
 		{
-			Console.WriteLine("taal van (baa):\n" + expr1.getLanguage(5));
-			Console.WriteLine("taal van (bb):\n" + expr2.getLanguage(5));
-			Console.WriteLine("taal van (baa | bb):\n" + expr3.getLanguage(5));
+			Console.WriteLine("taal van (baa):\n");
+			expr1.PrintLanguageAsString(expr1.GetLanguage(4));
 
-			Console.WriteLine("taal van (a|b)*:\n" + all.getLanguage(5));
-			Console.WriteLine("taal van (baa | bb)+:\n" + expr4.getLanguage(5));
-			Console.WriteLine("taal van (baa | bb)+ (a|b)*:\n" + expr5.getLanguage(6));
+			Console.WriteLine("\ntaal van (bb):\n");
+			expr2.PrintLanguageAsString(expr2.GetLanguage(4));
+
+			Console.WriteLine("\ntaal van (baa | bb):\n");
+			expr3.PrintLanguageAsString(expr3.GetLanguage(4));
+
+			Console.WriteLine("\ntaal van (a|b)*:\n");
+			all.PrintLanguageAsString(all.GetLanguage(4));
+
+			Console.WriteLine("\ntaal van (baa | bb)+:\n");
+			expr4.PrintLanguageAsString(expr4.GetLanguage(4));
+
+			Console.WriteLine("\ntaal van (baa | bb)+ (a|b)*:\n");
+			expr5.PrintLanguageAsString(expr5.GetLanguage(5));
+
+
 		}
 	}
 }

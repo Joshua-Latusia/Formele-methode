@@ -21,16 +21,16 @@ namespace FormeleMethode
 			//Console.WriteLine(TestAutomata.GetExampleSlide14Week2().IsDFA());
 			//TestAutomata.GetExampleSlide5Week2();
 
-			Automata<string> aut = TestAutomata.GetExampleSlide5Week2();
-			aut.GenerateGraphFile("Test1");
-			aut.ReverseAutomata();
-			aut.GenerateGraphFile("Test2");
-			aut.ReverseAutomata();
-			aut.GenerateGraphFile("Test3");
+			//Automata<string> aut = TestAutomata.GetExampleSlide5Week2();
+			//aut.GenerateGraphFile("Test1");
+			//aut.ReverseAutomata();
+			//aut.GenerateGraphFile("Test2");
+			//aut.ReverseAutomata();
+			//aut.GenerateGraphFile("Test3");
 
-			Automata<string> aut2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\Test1.dot");
-			aut2.GenerateGraphFile("Test1Dup");
-			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\Test1Dup","Test1PicDup");
+			//Automata<string> aut2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\Test1.dot");
+			//aut2.GenerateGraphFile("Test1Dup");
+			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\Test1Dup","Test1PicDup");
 
 			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\Test1","Test1Pic");
 			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\Test2", "Test2Pic");
@@ -38,7 +38,8 @@ namespace FormeleMethode
 
 			//TestAutomata.GetExampleSlide5Week2().ReverseAutomata().GenerateGraphFile("Test1");
 
-
+			TestRegExp test = new TestRegExp();
+			test.TestLanguage();
 
 
 			String graphVizString = @" digraph g{ label=""Graph""; labelloc=top;labeljust=left;}";
