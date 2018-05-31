@@ -28,19 +28,16 @@ namespace FormeleMethode
 			//aut.ReverseAutomata();
 			//aut.GenerateGraphFile("Test3");
 
-			//Automata<string> aut2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\Test1.dot");
-			//aut2.GenerateGraphFile("Test1Dup");
-			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\Test1Dup","Test1PicDup");
+			// Create NDFA
+			CreateExampleNDFA();
 
-			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\Test1","Test1Pic");
-			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\Test2", "Test2Pic");
+			// Create DFA
+			CreateExampleDFA();
 
+			// Create Regexp
+			new TestRegExp().TestLanguage();
 
-			//TestAutomata.GetExampleSlide5Week2().ReverseAutomata().GenerateGraphFile("Test1");
-
-			TestRegExp test = new TestRegExp();
-			test.TestLanguage();
-
+		
 
 			String graphVizString = @" digraph g{ label=""Graph""; labelloc=top;labeljust=left;}";
 			String testje = @" digraph {
@@ -66,6 +63,56 @@ namespace FormeleMethode
 			//FileDotEngine.Run(testje);
 
 			Console.ReadLine();
+		}
+
+		/// <summary>
+		/// Creates 3 example NDFA.
+		/// </summary>
+		public static void CreateExampleNDFA()
+		{
+			// With epsilon
+			Automata<string> exmapleNDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample1", "ndfaExample1Pic");
+			Console.WriteLine($"Example NDFA1 is a dfa = {exmapleNDFA1.IsDFA()}");
+
+			Automata<string> exmapleNDFA2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample2");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample2", "ndfaExample2Pic");
+			Console.WriteLine($"Example NDFA2 is a dfa = {exmapleNDFA2.IsDFA()}");
+
+			Automata<string> exmapleNDFA3 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample3");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample3", "ndfaExample3Pic");
+			Console.WriteLine($"Example NDFA3 is a dfa = {exmapleNDFA3.IsDFA()}");
+
+			// With epsilon
+			Automata<string> exmapleNDFA4 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample4");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample4", "ndfaExample4Pic");
+			Console.WriteLine($"Example NDFA4 is a dfa = {exmapleNDFA4.IsDFA()}");
+
+		}
+
+		/// <summary>
+		/// Creates 3 example DFA.
+		/// </summary>
+		public static void CreateExampleDFA()
+		{
+			Automata<string> exmapleDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaExample1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaExample1", "dfaExample1Pic");
+			Console.WriteLine($"Example DFA1 is a dfa = {exmapleDFA1.IsDFA()}\n\n");
+			Console.WriteLine($"DFA1 Word: abaa Should be accepted      Accepted: {exmapleDFA1.Accept("abaa")}");
+			Console.WriteLine($"DFA1 Word: abba Shouldn't be accepted      Accepted: {exmapleDFA1.Accept("abba")}");
+
+
+			Automata<string> exmapleDFA2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaExample2");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaExample2", "dfaExample2Pic");
+			Console.WriteLine($"\n\nExample DFA2 is a dfa = {exmapleDFA2.IsDFA()}");
+			Console.WriteLine($"DFA2 Word: abab Should be accepted      Accepted: {exmapleDFA2.Accept("abab")}");
+			Console.WriteLine($"DFA2 Word: ababa Shouldn't be accepted      Accepted: {exmapleDFA2.Accept("ababa")}");
+
+			Automata<string> exmapleDFA3 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaExample3");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaExample3", "dfaExample3Pic");
+			Console.WriteLine($"\n\nExample DFA2 is a dfa = {exmapleDFA3.IsDFA()}");
+			Console.WriteLine($"DFA3 Word: bbbba  Should be accepted      Accepted: {exmapleDFA3.Accept("bbbba")}");
+			Console.WriteLine($"DFA4 Word: aaaba Shouldn't be accepted      Accepted: {exmapleDFA3.Accept("aaaba")}");
 		}
 	}
 }

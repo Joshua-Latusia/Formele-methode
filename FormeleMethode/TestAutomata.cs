@@ -20,7 +20,7 @@ namespace FormeleMethode
 			SortedSet<char> alphabet = new SortedSet<char>();
 
 			// Open file
-			string[] lines = System.IO.File.ReadAllLines(fileName);
+			string[] lines = System.IO.File.ReadAllLines(fileName + ".dot");
 
 			// Read lines
 			foreach (string line in lines)

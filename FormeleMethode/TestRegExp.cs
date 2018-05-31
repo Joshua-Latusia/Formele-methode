@@ -10,6 +10,10 @@ namespace FormeleMethode
 	{
 		private RegExpression expr1, expr2, expr3, expr4, expr5, a, b, all;
 
+
+		/// <summary>
+		/// Reg expression 3 testData
+		/// </summary>
 		public TestRegExp()
 		{
 			a = new RegExpression("a");
@@ -27,6 +31,7 @@ namespace FormeleMethode
 
 			// expr4: "(baa | baa)+"
 			expr4 = expr3.Plus();
+
 			// expr5: "(baa | baa)+ (a|b)*"
 			expr5 = expr4.Dot(all);
 		}

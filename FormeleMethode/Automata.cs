@@ -168,17 +168,6 @@ namespace FormeleMethode
 			return isDFA;
 		}
 
-		/// <summary>
-		/// Checks if the filename is valid and if its a dot file.
-		/// </summary>
-		public bool IsValidFileName(string fileName)
-		{
-			return true; // TODO implent
-		}
-
-
-
-
 		public List<T> GetToStates(T from, char symbol)
 		{
 			List<T> toStates = new List<T>();
