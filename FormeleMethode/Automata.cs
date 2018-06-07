@@ -312,25 +312,42 @@ namespace FormeleMethode
 			return reachableStates.Distinct().ToList();
 		}
 
-		public void Delta()
+		/// <summary>
+		/// Looks to which state is reachable for a certain symbol
+		/// </summary>
+		/// <param name="states">The states.</param>
+		public List<T> Delta(List<T> states, char symbol)
 		{
-			//Loomp door transities
-			//Check of er een transitie is met een van de States als from in de lijst en dat symbool
-			//Sla to state op
-			//Repeat
+			SortedSet<T> reachableStates = new SortedSet<T>();
+
+			// Check for transistions where the from state is present in the 'states' parameter and matching symbol
+			foreach (Transition<T> trans in transitions)
+			{
+				if (states.Contains(trans.GetFromState()) && trans.GetSymbol() == symbol)
+				{
+					// Add the toState to the reachables states
+					reachableStates.Add(trans.GetToState());
+				}
+			}
+
+			return reachableStates.ToList();
 		}
 
 		/// <summary>
 		/// Converts from NDFA to a DFA.
 		/// </summary>
-		public void NdfaToDfa()
+		public void ConvertToDFA()
 		{
+			SortedSet<T> dfaStates = new SortedSet<T>();
+
 			// Only do this if its an NDFA
 			if (!IsDFA())
 			{
 				// Create fuik ???
 
 				// Create possible states
+				
+
 
 				// Create defined transitions
 
@@ -341,8 +358,7 @@ namespace FormeleMethode
 			}
 			else
 			{
-				Console.WriteLine("Error AutomatA is not a NDFA so it cant be converted to DFA");
-				// Display error && do nothing
+				Console.WriteLine("Error Automata is not a NDFA so it cant be converted to DFA");
 			}
 		}
 	}

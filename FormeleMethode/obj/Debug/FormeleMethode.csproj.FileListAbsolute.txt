@@ -196,7 +196,7 @@ C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\External\Settin
 C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\FormeleMethode.exe.config
 C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\FormeleMethode.exe
 C:\Programming Projects\Formele methode\FormeleMethode\bin\Debug\FormeleMethode.pdb
-C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.csprojResolveAssemblyReference.cache
 C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.csproj.CoreCompileInputs.cache
 C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.exe
 C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.pdb
+C:\Programming Projects\Formele methode\FormeleMethode\obj\Debug\FormeleMethode.csprojAssemblyReference.cache

@@ -29,40 +29,35 @@ namespace FormeleMethode
 			//aut.GenerateGraphFile("Test3");
 
 			// Create NDFA
-			CreateExampleNDFA();
+			//CreateExampleNDFA();
 
 			// Create DFA
-			CreateExampleDFA();
+			//CreateExampleDFA();
+
+			// Create NDFA => DFA
+			CreateExampleNDFAToDFA();
 
 			// Create Regexp
-			new TestRegExp().TestLanguage();
+			//new TestRegExp().TestLanguage();
 
 		
 
-			String graphVizString = @" digraph g{ label=""Graph""; labelloc=top;labeljust=left;}";
-			String testje = @" digraph {
- """" [shape=none]
- ""C""  [shape=doublecircle]
- ""E""[shape = doublecircle]
-
-""""-> ""A""
-""A""-> ""C""[label = ""a"", weight = ""a""];
-			""A""-> ""B""[label = ""b"", weight = ""b""];
-			""A""-> ""C""[label = ""b"", weight = ""b""];
-			""B""-> ""C""[label = ""$"", weight = ""$""];
-			""B""-> ""C""[label = ""b"", weight = ""b""];
-			""C""-> ""D""[label = ""a"", weight = ""a""];
-			""C""-> ""E""[label = ""a"", weight = ""a""];
-			""C""-> ""D""[label = ""b"", weight = ""b""];
-			""D""-> ""B""[label = ""a"", weight = ""a""];
-			""D""-> ""C""[label = ""a"", weight = ""a""];
-			""E""-> ""D""[label = ""$"", weight = ""$""];
-			""E""-> ""E""[label = ""a"", weight = ""a""];
-		}
-";
-			//FileDotEngine.Run(testje);
+			
 
 			Console.ReadLine();
+		}
+
+		/// <summary>
+		/// Creates a NDFA and converts it to a DFA
+		/// </summary>
+		public static void CreateExampleNDFAToDFA()
+		{
+			// With epsilon
+			Automata<string> exmapleNDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample1");
+			List<string> ecloseList = exmapleNDFA1.EClosure("S");
+			List<string> resA = exmapleNDFA1.Delta(ecloseList, 'a');
+			List<string> resB = exmapleNDFA1.Delta(ecloseList, 'b');
+
 		}
 
 		/// <summary>
