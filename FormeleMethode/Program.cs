@@ -55,8 +55,13 @@ namespace FormeleMethode
 			// With epsilon
 			Automata<string> exmapleNDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample1");
 			List<string> ecloseList = exmapleNDFA1.EClosure("S");
-			List<string> resA = exmapleNDFA1.Delta(ecloseList, 'a');
-			List<string> resB = exmapleNDFA1.Delta(ecloseList, 'b');
+
+			Console.WriteLine("\n\nTesting Delta function with NDFA1 with both a and b");
+
+			Console.WriteLine($"NDFA1 eClosure S with Delta a should be = F,M,N,O,P,Q" +
+							  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'a').OrderBy(q => q).ToList())}");
+			Console.WriteLine($"NDFA1 eClosure S with Delta B should be = F,J,L,M,N,O,Q,R" +
+							  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'b').OrderBy(q => q).ToList())}");
 
 		}
 

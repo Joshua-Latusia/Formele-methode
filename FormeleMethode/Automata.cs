@@ -330,7 +330,15 @@ namespace FormeleMethode
 				}
 			}
 
-			return reachableStates.ToList();
+			// Check for all reachable states if there are states connected with epsilon which are per 
+			// Definition also reachable
+			List<T> reachableWithEpsilon = reachableStates.ToList();
+			foreach (T reachableState in reachableStates)
+			{
+				reachableWithEpsilon.AddRange(EClosure(reachableState));
+			}
+			// Return list without duplicates
+			return reachableWithEpsilon.Distinct().ToList();
 		}
 
 		/// <summary>
