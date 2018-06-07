@@ -127,6 +127,8 @@ namespace FormeleMethode
 					for (int j = i + 1; i < regexString.Length; j++)
 					{
 						if (regexString[j] == '(') bracketCount++;
+
+						// We found the matching closing bracket
 						if (regexString[j] == ')' && bracketCount == 0)
 						{
 							closingBracketPosition = j;
@@ -142,6 +144,7 @@ namespace FormeleMethode
 					string between = regexString.Substring(i + 1, closingBracketPosition - 1 - i);
 					RegExpression regExpression = StringToRegExpression(new RegExpression(), between);
 
+					// Look for the part after closing bracket 
 					if (closingBracketPosition + 1 < regexString.Length)
 					{
 						i = closingBracketPosition + 1;
@@ -166,7 +169,7 @@ namespace FormeleMethode
 					}
 				}
 
-
+				// For all the operators not related to ()
 				else if (currentChar == '+')
 				{
 					regex = regex.Plus();
@@ -317,6 +320,46 @@ namespace FormeleMethode
 			}
 
 			Console.WriteLine(sb.ToString());
+		}
+
+		/// <summary>
+		/// Easier visualisation of the regexpression as string
+		/// </summary>
+		public override string ToString()
+		{
+			string regexString = "";
+
+			if (terminals != "")
+			{
+				regexString = terminals;
+			}
+			else
+			{
+				if (right != null)
+				{
+					regexString += "(";
+				}
+				regexString += left.ToString();
+				switch (o)
+				{
+					case Operator.PLUS:
+						regexString += '+';
+						break;
+					case Operator.STAR:
+						regexString += '*';
+						break;
+					case Operator.OR:
+						regexString += '|';
+						break;
+					
+				}
+				if (right != null)
+				{
+					regexString += right.ToString();
+					regexString += ')';
+				}
+			}
+			return regexString;
 		}
 
 	}

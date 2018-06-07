@@ -43,7 +43,7 @@ namespace FormeleMethode
 			new TestRegExp();
 
 
-
+			CreateExampleRegExp();
 
 			Console.ReadLine();
 		}
@@ -113,6 +113,7 @@ namespace FormeleMethode
 			Console.WriteLine($"DFA1 Word: abaa Should be accepted      Accepted: {exmapleDFA1.Accept("abaa")}");
 			Console.WriteLine($"DFA1 Word: abba Shouldn't be accepted      Accepted: {exmapleDFA1.Accept("abba")}");
 
+			exmapleDFA1.PrintLanguage(4);
 
 			Automata<string> exmapleDFA2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaExample2");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaExample2", "dfaExample2Pic");
@@ -125,6 +126,32 @@ namespace FormeleMethode
 			Console.WriteLine($"\n\nExample DFA2 is a dfa = {exmapleDFA3.IsDFA()}");
 			Console.WriteLine($"DFA3 Word: bbbba  Should be accepted      Accepted: {exmapleDFA3.Accept("bbbba")}");
 			Console.WriteLine($"DFA4 Word: aaaba Shouldn't be accepted      Accepted: {exmapleDFA3.Accept("aaaba")}");
+		}
+
+		/// <summary>
+		/// Creates multiple example regexp.
+		/// </summary>
+		public static void CreateExampleRegExp()
+		{
+			// regex : (aa)*(aa)+
+			string regex1 = "(aa)*(aa)+" ;
+			RegExpression expression1 = new RegExpression(regex1);
+			Console.WriteLine($"Language (aa)*(aa)+ \n" +
+							  $"Language via toString method = {expression1.ToString()}\n" +
+							   $"Word 'aaaa' should be true and the result = WORSTE\n\n");
+
+			// regex : a* (aa+ | ba*b ) * (abba | baab | bbbb)+
+			string regex2 = "a* (aa+ | ba*b ) * (abba | baab | bbbb)+";
+			RegExpression expression2 = new RegExpression(regex2);
+			Console.WriteLine("Language a* (aa+ | ba*b ) * (abba | baab | bbbb)+ \n" +
+							  $"Language via toString method = {expression2.ToString()}\n" +
+							  $"Word asdasdsd \n\n");
+
+			string regex3 = "(a*b*)+ (bb*b | ab*baa)+";
+			RegExpression expression3 = new RegExpression(regex3);
+			Console.WriteLine("Language (a*b*)+ (bb*b | ab*baa)+ \n" +
+							  $"Language via toString method = {expression3.ToString()}\n" +
+							  $"Word asdadsad \n\n");
 		}
 	}
 }
