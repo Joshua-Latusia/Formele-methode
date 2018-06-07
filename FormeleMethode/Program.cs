@@ -40,9 +40,10 @@ namespace FormeleMethode
 			// Create Regexp
 			//new TestRegExp().TestLanguage();
 
-		
+			new TestRegExp();
 
-			
+
+
 
 			Console.ReadLine();
 		}
