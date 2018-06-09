@@ -74,7 +74,7 @@ namespace FormeleMethode
 
 			Automata<string> DFAToMin = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaToMinExample1");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaToMinExample1", "dfaToMinExample1Pic");
-			Automata<string> MinDFA = NdfaToDfaConverter.MinimizeDfa(DFAToMin);
+			Automata<string> MinDFA = NdfaToDfaConverter.RenameStates(NdfaToDfaConverter.MinimizeDfa(DFAToMin));
 			MinDFA.GenerateGraphFile("MinDfaExample1");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\MinDfaExample1", "MinDfaExample1Pic");
 

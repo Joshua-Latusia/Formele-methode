@@ -94,6 +94,57 @@ namespace FormeleMethode
 		}
 
 		/// <summary>
+		/// Renames the states and transitions states.
+		/// </summary>
+		public static Automata<string> RenameStates(Automata<string> dfa)
+		{
+			// key = old name value = new name
+			Dictionary<string, string> dictionay = new Dictionary<string, string>();
+			int index = 0;
+
+			// Link shorter name to each state
+			foreach (string s in dfa.states)
+			{
+				dictionay.Add(s, $"q{index}");
+				index++;
+			}
+
+			// Rename the states
+			SortedSet<string> newStates = new SortedSet<string>();
+			foreach (string state in dfa.states)
+			{
+				newStates.Add(dictionay[state]);
+			}
+			dfa.states = newStates;
+
+			// Rename start states
+			SortedSet<string> newStartStates = new SortedSet<string>();
+			foreach (string startState in dfa.startStates)
+			{
+				newStartStates.Add(dictionay[startState]);
+			}
+			dfa.startStates = newStartStates;
+
+			// Rename end states
+			SortedSet<string> newEndStates = new SortedSet<string>();
+			foreach (string endState in dfa.endStates)
+			{
+				newEndStates.Add(dictionay[endState]);
+			}
+			dfa.endStates = newEndStates;
+
+			// Rename trans states
+			HashSet<Transition<string>> newTransitions = new HashSet<Transition<string>>();
+			foreach (Transition<string> oldTransition in dfa.transitions)
+			{
+				newTransitions.Add(new Transition<string>(dictionay[oldTransition.GetFromState()], oldTransition.GetSymbol(), dictionay[oldTransition.GetToState()]));
+			}
+			dfa.transitions = newTransitions;
+
+			return dfa;
+		}
+
+		/// <summary>
 		/// Converts the state.
 		/// </summary>
 		/// <param name="currentState">State of the current.</param>
