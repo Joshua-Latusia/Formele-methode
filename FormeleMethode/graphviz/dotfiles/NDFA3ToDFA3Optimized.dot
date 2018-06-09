@@ -1,0 +1,9 @@
+digraph { 
+ "" [shape=none]
+
+ "" -> ""
+ "" -> "Fuik"[label="a", weight="a"]; 
+ "" -> "Fuik"[label="b", weight="b"]; 
+ "Fuik" -> "Fuik"[label="a", weight="a"]; 
+ "Fuik" -> "Fuik"[label="b", weight="b"]; 
+}

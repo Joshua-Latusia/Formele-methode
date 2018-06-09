@@ -29,7 +29,7 @@ namespace FormeleMethode
 			//aut.GenerateGraphFile("Test3");
 
 			// Create NDFA
-			//CreateExampleNDFA();
+			CreateExampleNDFA();
 
 			// Create DFA
 			//CreateExampleDFA();
@@ -54,15 +54,37 @@ namespace FormeleMethode
 		public static void CreateExampleNDFAToDFA()
 		{
 			// With epsilon
-			Automata<string> exmapleNDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample1");
-			List<string> ecloseList = exmapleNDFA1.EClosure("S");
+			Automata<string> exmapleNDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample3");
+			//List<string> ecloseList = exmapleNDFA1.EClosure("S");
 
 			Console.WriteLine("\n\nTesting Delta function with NDFA1 with both a and b");
 
-			Console.WriteLine($"NDFA1 eClosure S with Delta a should be = F,M,N,O,P,Q" +
-							  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'a').OrderBy(q => q).ToList())}");
-			Console.WriteLine($"NDFA1 eClosure S with Delta B should be = F,J,L,M,N,O,Q,R" +
-							  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'b').OrderBy(q => q).ToList())}");
+			//Console.WriteLine($"NDFA1 eClosure S with Delta a should be = F,M,N,O,P,Q" +
+			//				  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'a').OrderBy(q => q).ToList())}");
+			//Console.WriteLine($"NDFA1 eClosure S with Delta B should be = F,J,L,M,N,O,Q,R" +
+			//				  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'b').OrderBy(q => q).ToList())}");
+
+			//Automata<string> NDFA2ToDFA2 = NdfaToDfaConverter.ConvertToDFA(exmapleNDFA1);
+			//NDFA2ToDFA2.GenerateGraphFile("NDFA3ToDFA3Pic");
+			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\NDFA3ToDFA3Pic", "NDFA3ToDFA3Pic");
+			//Console.WriteLine($"\nExample NDFA3 is a dfa = {NDFA2ToDFA2.IsDFA()}");
+			//Automata<string> OptimizedDFA2 = NdfaToDfaConverter.MinimizeDfa(NDFA2ToDFA2);
+			//OptimizedDFA2.GenerateGraphFile("NDFA3ToDFA3Optimized");
+			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\NDFA3ToDFA3Optimized", "NDFA3ToDFA3OptimizedPic");
+
+			Automata<string> DFAToMin = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaToMinExample1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaToMinExample1", "dfaToMinExample1Pic");
+			Automata<string> MinDFA = NdfaToDfaConverter.MinimizeDfa(DFAToMin);
+			MinDFA.GenerateGraphFile("MinDfaExample1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\MinDfaExample1", "MinDfaExample1Pic");
+
+
+			// DFA reversed
+			//NDFA2ToDFA2.ReverseAutomata();
+			//NDFA2ToDFA2.GenerateGraphFile("NDFA3ToDFA3Reverse1");
+			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\NDFA3ToDFA3Reverse1", "NDFA3ToDFA3Reverse1Pic");
+
+
 
 		}
 

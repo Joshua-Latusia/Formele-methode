@@ -1,0 +1,10 @@
+digraph { 
+ "" [shape=none]
+ "q0q1q2q1q2" [shape=doublecircle]
+
+ "" -> "q0q0q1q2"
+ "q0q0q1q2" -> "q0q1q2q1q2"[label="a", weight="a"]; 
+ "q0q1q2q1q2" -> "q0q0q1q2"[label="a", weight="a"]; 
+ "q0q1q2q1q2" -> "q0q1q2q1q2"[label="b", weight="b"]; 
+ "q0q0q1q2" -> "q0q1q2q1q2"[label="b", weight="b"]; 
+}

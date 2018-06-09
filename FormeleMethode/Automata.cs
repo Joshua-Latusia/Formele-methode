@@ -17,12 +17,12 @@ namespace FormeleMethode
 	public class Automata<T> where T : IComparable<T>
 	{
 
-		private HashSet<Transition<T>> transitions;
+		public HashSet<Transition<T>> transitions;
 
-		private SortedSet<T> states;
-		private SortedSet<T> startStates;
-		private SortedSet<T> endStates;
-		private SortedSet<char> symbols;
+		public SortedSet<T> states;
+		public SortedSet<T> startStates;
+		public SortedSet<T> endStates;
+		public SortedSet<char> symbols;
 
 		public Automata() : this(new SortedSet<char>())
 		{
@@ -85,16 +85,41 @@ namespace FormeleMethode
 			}
 		}
 
-		// geefTaalTotLengte
+		// geefTaalTotLengte TODO
 		public void PrintLanguage(int maxLength)
 		{
-			SortedSet<string> combinations = new SortedSet<string>();
+			//List<string> taal = NextLetter(0, new char[maxLength], new List<string>(), maxLength);
 
-			for (int i = 0; i < maxLength; i++)
+			//Console.WriteLine($"Printing language :\n " +
+			//				  $"{String.Join(",", taal.OrderBy(q => q).ToList())}\n");
+		}
+
+		/// <summary>
+		/// Recursive function to gett all possible Words in the language
+		/// </summary>
+		/// <param name="letterIndex">Index of the letter.</param>
+		/// <param name="currentWord">The current word.</param>
+		/// <param name="words">The words.</param>
+		/// <param name="maxLength">The maximum length.</param>
+		/// <returns></returns>
+		public List<string> NextLetter(int letterIndex, char[] currentWord, List<string> words, int maxLength)
+		{
+			// For all possible symbols
+			for (int i = 0; i < symbols.Count; i++)
 			{
-				
-				// Add per lengte de combinations naar sortedset
+				currentWord[letterIndex] = symbols.ToList()[i];
+
+				if (letterIndex == maxLength - 1)
+				{
+					words.Add(new string(currentWord));
+				}
+				else
+				{
+					words.Add(new string(currentWord));
+					NextLetter(letterIndex + 1, currentWord, words, maxLength);
+				}
 			}
+			return words;
 		}
 
 		/// <summary>
@@ -342,19 +367,55 @@ namespace FormeleMethode
 		}
 
 		/// <summary>
-		/// Converts from NDFA to a DFA.
+		/// Gets the transistions with state being the from state in the transitions.
+		/// </summary>
+		/// <param name="state">The state.</param>
+		/// <returns></returns>
+		public List<Transition<T>> GetTransitions(T state)
+		{
+			List<Transition<T>> trans = transitions.Where(t => t.GetFromState().Equals(state)).ToList();
+			List<T> epsilonStates = trans.Where(t => t.GetSymbol() == '$' && !t.GetFromState().Equals(t.GetToState())).Select(t => t.GetToState()).ToList();
+			foreach (T epsilonState in epsilonStates)
+			{
+				trans.AddRange(GetTransitions(epsilonState));
+			}
+
+			return trans;
+		}
+
+
+
+		/// <summary>
+		/// TODO remove
 		/// </summary>
 		public void ConvertToDFA()
 		{
-			SortedSet<T> dfaStates = new SortedSet<T>();
+			SortedSet<SortedSet<T>> dfaStates = new SortedSet<SortedSet<T>>();
+			HashSet<Transition<string>> dfaTransitions = new HashSet<Transition<string>>();
 
 			// Only do this if its an NDFA
 			if (!IsDFA())
 			{
-				// Create fuik ???
+				// Create fuik transitions
+				foreach (char symbol in symbols)
+				{
+					dfaTransitions.Add(new Transition<string>("fuik", symbol , "fuik"));
+				}
 
 				// Create possible states
-				
+				foreach (T state in states)
+				{
+					for (int i = 0; i < states.Count; i++)
+					{
+
+					}
+				}
+
+				//dfaStates = states;
+				//for (int i = 0; i < dfaStates.Count; i++)
+				//{
+				//	dfaStates.SelectMany(x =>)
+				//}
 
 
 				// Create defined transitions

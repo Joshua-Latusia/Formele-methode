@@ -1,0 +1,22 @@
+digraph { 
+ "" [shape=none]
+ "q0" [shape=doublecircle]
+
+ "" -> "q0q1q4"
+ "" -> "q0q2q3q4"
+ "" -> "q0q3q4"
+ "q0q1" -> "q0"[label="a", weight="a"]; 
+ "q0q1" -> "q0q1"[label="a", weight="a"]; 
+ "q0q2q3" -> "q0q1"[label="b", weight="b"]; 
+ "q0q1q4" -> "q0q2q3"[label="a", weight="a"]; 
+ "q0q1q4" -> "q0q1q4"[label="a", weight="a"]; 
+ "q0q2q3q4" -> "q0q1q4"[label="b", weight="b"]; 
+ "q0q1q4" -> "q0q2q3q4"[label="a", weight="a"]; 
+ "q0q3q4" -> "q0q2q3q4"[label="b", weight="b"]; 
+ "q0q1q4" -> "q0q3q4"[label="a", weight="a"]; 
+ "q0q3q4" -> "q0q3q4"[label="b", weight="b"]; 
+ "q0q3q4" -> "q0q2q3"[label="b", weight="b"]; 
+ "q0q3" -> "q0"[label="b", weight="b"]; 
+ "q0q1q4" -> "q0q3"[label="a", weight="a"]; 
+ "q0q3" -> "q0q3"[label="b", weight="b"]; 
+}

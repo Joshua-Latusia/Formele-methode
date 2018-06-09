@@ -361,7 +361,6 @@ namespace FormeleMethode
 			}
 			return regexString;
 		}
-
 	}
 
 	// Comperator for  comparing length

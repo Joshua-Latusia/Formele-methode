@@ -34,12 +34,11 @@ namespace FormeleMethode
 			// expr5: "(baa | baa)+ (a|b)*"
 			expr5 = expr4.Dot(all);
 
-			StringToRegExpression("a* (aa+ | ba*b )* (abba | baab | bbbb)+");
 		}
 
 
 		/// <summary>
-		/// Converts a string to a regular expression
+		/// TODO remove
 		/// </summary>
 		/// <returns></returns>
 		public RegExpression StringToRegExpression(string expression)
