@@ -59,8 +59,7 @@ namespace FormeleMethode
 			}
 
 			// Do final stuff 
-			//return dfa;
-			return RemoveStateSeperators(dfa); // return finalized conversion. -> 
+			return RenameStates(RemoveStateSeperators(dfa));
 
 		}
 
@@ -242,8 +241,6 @@ namespace FormeleMethode
 		/// <returns></returns>
 		private static int CheckAvailableRoutes(string[] states, char symbol, Automata<string> ndfa)
 		{
-			int[] possibleRoutes = new int[states.Length];
-
 			int AmountOfCorrectRoutes = 0;
 
 			foreach (string state in states)
