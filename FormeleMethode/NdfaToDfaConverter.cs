@@ -11,7 +11,10 @@ namespace FormeleMethode
 	{
 		public static Automata<string> ConvertToDFA(Automata<string> ndfa)
 		{
-			Automata<string> dfa = new Automata<string>(ndfa.GetAlphabet());
+			SortedSet<char> dfaAlphabet = ndfa.GetAlphabet();
+			dfaAlphabet.Remove('$');
+
+			Automata<string> dfa = new Automata<string>(dfaAlphabet);
 			string combinedStartState = "";
 			SortedSet<string> completeStartState = new SortedSet<string>();
 
@@ -59,7 +62,7 @@ namespace FormeleMethode
 			}
 
 			// Do final stuff 
-			return RemoveStateSeperators(dfa);
+			//return RemoveStateSeperators(dfa);
 			return RenameStates(RemoveStateSeperators(dfa));
 
 		}
@@ -215,8 +218,8 @@ namespace FormeleMethode
 			foreach (string state in states)
 			{
 				// Get the transitions of the NDFA
-				List<Transition<string>> trans = ndfa.GetTransitions(state);
-
+				List<Transition<string>> trans = ndfa.GetTransitions(state); // Possible error with getting to states with eClosure
+				
 				foreach (Transition<string> t in trans)
 				{
 					if (t.GetSymbol() == symbol)

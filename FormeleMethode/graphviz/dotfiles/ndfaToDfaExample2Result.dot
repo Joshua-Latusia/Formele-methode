@@ -1,0 +1,29 @@
+digraph { 
+ "" [shape=none]
+ "BC" [shape=doublecircle]
+ "BCDE" [shape=doublecircle]
+ "C" [shape=doublecircle]
+ "CD" [shape=doublecircle]
+ "CDE" [shape=doublecircle]
+ "DE" [shape=doublecircle]
+
+ "" -> "A"
+ "A" -> "C"[label="a", weight="a"]; 
+ "C" -> "DE"[label="a", weight="a"]; 
+ "DE" -> "BC"[label="a", weight="a"]; 
+ "BC" -> "DE"[label="a", weight="a"]; 
+ "BC" -> "CD"[label="b", weight="b"]; 
+ "CD" -> "BCDE"[label="a", weight="a"]; 
+ "BCDE" -> "BCDE"[label="a", weight="a"]; 
+ "BCDE" -> "CDE"[label="b", weight="b"]; 
+ "CDE" -> "BCDE"[label="a", weight="a"]; 
+ "CDE" -> "DE"[label="b", weight="b"]; 
+ "CD" -> "D"[label="b", weight="b"]; 
+ "D" -> "BC"[label="a", weight="a"]; 
+ "D" -> "Fuik"[label="b", weight="b"]; 
+ "DE" -> "DE"[label="b", weight="b"]; 
+ "C" -> "D"[label="b", weight="b"]; 
+ "A" -> "BC"[label="b", weight="b"]; 
+ "Fuik" -> "Fuik"[label="a", weight="a"]; 
+ "Fuik" -> "Fuik"[label="b", weight="b"]; 
+}

@@ -36,98 +36,9 @@ namespace FormeleMethode
 
 		}
 
-
 		/// <summary>
-		/// TODO remove
+		/// Displays the language and not language printing
 		/// </summary>
-		/// <returns></returns>
-		public RegExpression StringToRegExpression(string expression)
-		{
-			// TODO CONTINUE HERE
-
-			// Remove spaces
-			expression = expression.Replace(" ", String.Empty);
-
-			// Individual expressions
-			List<RegExpression> expressions = new List<RegExpression>();
-
-			// All terminals from regex
-			List<string> terminals = new List<string>();
-
-			// Current terminal
-			string tempString = "";
-			string lastChar = " ";
-
-			// Split the string by delim
-			foreach (char c in expression)
-			{
-				switch (c)
-				{
-					case '(':
-						// TODO do something with dot ???
-						break;
-					case ')':
-					case ' ':
-						lastChar = c.ToString();
-						if (tempString.Length != 0)
-						{
-							terminals.Add(tempString);
-							// TODO Create regex with the string 
-							tempString = "";
-						}
-						break;
-
-					case '*':
-						// TODO if lastchar ) we need to apply right part off expressions
-						if (lastChar == ")")
-						{
-							Console.WriteLine("Haakje");
-						}
-						else if (tempString.Length != 0)
-						{
-							// Create part of expression
-							RegExpression tempReg = new RegExpression(tempString).Star();
-							expressions.Add(tempReg);
-							terminals.Add(tempString);
-							tempString = "";
-							
-						}
-					break;
-
-					case '+':
-						if (lastChar == ")")
-						{
-							Console.WriteLine("Haakje");
-						}
-						if (tempString.Length != 0)
-						{
-							RegExpression tempReg = new RegExpression(tempString).Plus();
-							expressions.Add(tempReg);
-							terminals.Add(tempString);
-							tempString = "";
-						}
-						break;
-
-					case '|':
-						// TODO remember the next string needs to be orred ????
-						if (tempString.Length != 0)
-						{
-							terminals.Add(tempString);
-							tempString = "";
-						}
-						break;
-
-					default:
-						tempString += c;
-					break;
-				}
-			}
-			//string[] split = expression.Split(new Char[] {'','' });
-
-			return new RegExpression();
-		}
-
-
 		public void TestLanguage()
 		{
 			Console.WriteLine("taal van (baa):\n");
@@ -147,7 +58,7 @@ namespace FormeleMethode
 			Console.WriteLine(String.Join(",", all.GetNotLanguage(4).OrderBy(x => x)));
 
 			Console.WriteLine("\ntaal van (baa | bb)+:\n");
-			expr4.PrintLanguageAsString(expr4.GetLanguage(3)); // TODO fix doesn't work with 2 idk why..
+			expr4.PrintLanguageAsString(expr4.GetLanguage(3)); // TODO 
 			Console.WriteLine("\nAlles wat taal (baa | bb)+ niet accepteerd:\n");
 			Console.WriteLine(String.Join(",", expr4.GetNotLanguage(3).OrderBy(x => x)));
 

@@ -1,0 +1,15 @@
+digraph { 
+ "" [shape=none]
+
+ "" -> "q1"
+ "q1" -> "q4"[label="a", weight="a"]; 
+ "q4" -> "q0"[label="a", weight="a"]; 
+ "q4" -> "q3"[label="b", weight="b"]; 
+ "q3" -> "q2"[label="a", weight="a"]; 
+ "q2" -> "q4"[label="a", weight="a"]; 
+ "q2" -> "q3"[label="b", weight="b"]; 
+ "q3" -> "q0"[label="b", weight="b"]; 
+ "q1" -> "q0"[label="b", weight="b"]; 
+ "q0" -> "q0"[label="a", weight="a"]; 
+ "q0" -> "q0"[label="b", weight="b"]; 
+}

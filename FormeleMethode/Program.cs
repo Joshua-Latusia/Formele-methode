@@ -29,63 +29,76 @@ namespace FormeleMethode
 			//aut.GenerateGraphFile("Test3");
 
 			// Create NDFA
-			CreateExampleNDFA();
+			//CreateExampleNDFA();
 
 			// Create DFA
 			//CreateExampleDFA();
 
 			// Create NDFA => DFA
-			CreateExampleNDFAToDFA();
+			//CreateExampleNDFAToDFA();
 
-			// Create Regexp
+			// Create DFA -> minimized DFA
+			//CreateExampleMinimizeDfa();
+
+			// Printing of language and not language
 			//new TestRegExp().TestLanguage();
 
-			new TestRegExp();
-
-
+			// Parsing of string to RegExp object
 			CreateExampleRegExp();
 
+
+
+			// So app doesn't close
 			Console.ReadLine();
 		}
 
 		/// <summary>
-		/// Creates a NDFA and converts it to a DFA
+		/// Creates 2 DFA and minimize them
+		/// </summary>
+		public static void CreateExampleMinimizeDfa()
+		{
+			// Creating pic of the dfa1 -> minimize dfa and create graphfile and pic
+			Automata<string> DFAToMin1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaToMinExample1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaToMinExample1", "dfaToMinExample1Pic");
+			Automata<string> MinDFA1 = NdfaToDfaConverter.RenameStates(NdfaToDfaConverter.MinimizeDfa(DFAToMin1));
+			MinDFA1.GenerateGraphFile("MinDfaExample1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\MinDfaExample1", "MinDfaExample1Pic");
+
+			// Aftekenlijst opdracht 6 Creating pic of the dfa2 -> minimize dfa and create graphfile and pic
+			Automata<string> DFAToMin2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaToMinExample2");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaToMinExample2", "dfaToMinExample2Pic");
+			Automata<string> MinDFA2 = NdfaToDfaConverter.RenameStates(NdfaToDfaConverter.MinimizeDfa(DFAToMin2));
+			MinDFA2.GenerateGraphFile("MinDfaExample2");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\MinDfaExample2", "MinDfaExample2Pic");
+
+
+		}
+
+		/// <summary>
+		/// Creates the example ndfa to dfa.
 		/// </summary>
 		public static void CreateExampleNDFAToDFA()
 		{
-			// With epsilon
-			Automata<string> exmapleNDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample3");
-			//List<string> ecloseList = exmapleNDFA1.EClosure("S");
+			// Aftekenlijst Opdracht 5   Creating pic of the ndfa1 -> toDfa + graphfile and new pic
+			Automata<string> ndfaToDfa1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaToDfaExample1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaToDfaExample1", "ndfaToDfaExample1Pic");
+			Automata<string> Dfa1 = NdfaToDfaConverter.ConvertToDFA(ndfaToDfa1);
+			Dfa1.GenerateGraphFile("ndfaToDfaExample1Result");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaToDfaExample1Result", "ndfaToDfaExample1ResultPic");
 
-			Console.WriteLine("\n\nTesting Delta function with NDFA1 with both a and b");
+			// Aftekenlijst Opdracht 5 Creating pic of the ndfa2 -> toDfa + graphfile and new pic DOESNT work
+			Automata<string> ndfaToDfa2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaToDfaExample2");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaToDfaExample2", "ndfaToDfaExample2Pic");
+			Automata<string> Dfa2 = NdfaToDfaConverter.ConvertToDFA(ndfaToDfa2);
+			Dfa2.GenerateGraphFile("ndfaToDfaExample2Result");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaToDfaExample2Result", "ndfaToDfaExample2ResultPic");
 
-			//Console.WriteLine($"NDFA1 eClosure S with Delta a should be = F,M,N,O,P,Q" +
-			//				  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'a').OrderBy(q => q).ToList())}");
-			//Console.WriteLine($"NDFA1 eClosure S with Delta B should be = F,J,L,M,N,O,Q,R" +
-			//				  $"\nResult = {String.Join(",", exmapleNDFA1.Delta(ecloseList, 'b').OrderBy(q => q).ToList())}");
-
-			//Automata<string> NDFA2ToDFA2 = NdfaToDfaConverter.ConvertToDFA(exmapleNDFA1);
-			//NDFA2ToDFA2.GenerateGraphFile("NDFA3ToDFA3Pic");
-			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\NDFA3ToDFA3Pic", "NDFA3ToDFA3Pic");
-			//Console.WriteLine($"\nExample NDFA3 is a dfa = {NDFA2ToDFA2.IsDFA()}");
-			//Automata<string> OptimizedDFA2 = NdfaToDfaConverter.MinimizeDfa(NDFA2ToDFA2);
-			//OptimizedDFA2.GenerateGraphFile("NDFA3ToDFA3Optimized");
-			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\NDFA3ToDFA3Optimized", "NDFA3ToDFA3OptimizedPic");
-
-			Automata<string> DFAToMin = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaToMinExample1");
-			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaToMinExample1", "dfaToMinExample1Pic");
-			Automata<string> MinDFA = NdfaToDfaConverter.RenameStates(NdfaToDfaConverter.MinimizeDfa(DFAToMin));
-			MinDFA.GenerateGraphFile("MinDfaExample1");
-			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\MinDfaExample1", "MinDfaExample1Pic");
-
-
-			// DFA reversed
-			//NDFA2ToDFA2.ReverseAutomata();
-			//NDFA2ToDFA2.GenerateGraphFile("NDFA3ToDFA3Reverse1");
-			//FileDotEngine.Run(@".\..\..\graphviz\dotfiles\NDFA3ToDFA3Reverse1", "NDFA3ToDFA3Reverse1Pic");
-
-
-
+			// NDFA without epsilon
+			Automata<string> ndfaToDfa3 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\ndfaExample3");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaExample3", "ndfaExample3Pic");
+			Automata<string> Dfa3 = NdfaToDfaConverter.ConvertToDFA(ndfaToDfa3);
+			Dfa3.GenerateGraphFile("ndfaToDfaExample3Result");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ndfaToDfaExample3Result", "ndfaToDfaExample3ResultPic");
 		}
 
 		/// <summary>
@@ -159,8 +172,7 @@ namespace FormeleMethode
 			string regex1 = "(aa)*(aa)+" ;
 			RegExpression expression1 = new RegExpression(regex1);
 			Console.WriteLine($"Language (aa)*(aa)+ \n" +
-							  $"Language via toString method = {expression1.ToString()}\n" +
-							   $"Word 'aaaa' should be true and the result = WORSTE\n\n");
+							  $"Language via toString method = {expression1.ToString()}\n";
 
 			// regex : a* (aa+ | ba*b ) * (abba | baab | bbbb)+
 			string regex2 = "a* (aa+ | ba*b ) * (abba | baab | bbbb)+";
@@ -169,6 +181,7 @@ namespace FormeleMethode
 							  $"Language via toString method = {expression2.ToString()}\n" +
 							  $"Word asdasdsd \n\n");
 
+			// regex : (a*b*)+ (bb*b | ab*baa)+
 			string regex3 = "(a*b*)+ (bb*b | ab*baa)+";
 			RegExpression expression3 = new RegExpression(regex3);
 			Console.WriteLine("Language (a*b*)+ (bb*b | ab*baa)+ \n" +

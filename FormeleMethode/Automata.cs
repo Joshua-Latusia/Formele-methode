@@ -329,7 +329,7 @@ namespace FormeleMethode
 					}
 					else // Else add fromstate since its the last node
 					{
-						reachableStates.Add(trans.GetFromState());
+						reachableStates.Add(trans.GetFromState()); // TODO we should look further 
 					}
 				}
 			}
@@ -373,7 +373,10 @@ namespace FormeleMethode
 		/// <returns></returns>
 		public List<Transition<T>> GetTransitions(T state)
 		{
+			// Get all the transitions for the given state
 			List<Transition<T>> trans = transitions.Where(t => t.GetFromState().Equals(state)).ToList();
+
+			// Take all the transitions where symbol is epsilon
 			List<T> epsilonStates = trans.Where(t => t.GetSymbol() == '$' && !t.GetFromState().Equals(t.GetToState())).Select(t => t.GetToState()).ToList();
 			foreach (T epsilonState in epsilonStates)
 			{
@@ -381,52 +384,6 @@ namespace FormeleMethode
 			}
 
 			return trans;
-		}
-
-		/// <summary>
-		/// TODO remove
-		/// </summary>
-		public void ConvertToDFA()
-		{
-			SortedSet<SortedSet<T>> dfaStates = new SortedSet<SortedSet<T>>();
-			HashSet<Transition<string>> dfaTransitions = new HashSet<Transition<string>>();
-
-			// Only do this if its an NDFA
-			if (!IsDFA())
-			{
-				// Create fuik transitions
-				foreach (char symbol in symbols)
-				{
-					dfaTransitions.Add(new Transition<string>("fuik", symbol , "fuik"));
-				}
-
-				// Create possible states
-				foreach (T state in states)
-				{
-					for (int i = 0; i < states.Count; i++)
-					{
-
-					}
-				}
-
-				//dfaStates = states;
-				//for (int i = 0; i < dfaStates.Count; i++)
-				//{
-				//	dfaStates.SelectMany(x =>)
-				//}
-
-
-				// Create defined transitions
-
-				// Create rest of states
-
-				// Remove niet bereikbare states en bijbehorende transitions.
-
-			}
-			else
-			{
-				Console.WriteLine("Error Automata is not a NDFA so it cant be converted to DFA");
-			}
 		}
 	}
 }
