@@ -59,6 +59,7 @@ namespace FormeleMethode
 			}
 
 			// Do final stuff 
+			return RemoveStateSeperators(dfa);
 			return RenameStates(RemoveStateSeperators(dfa));
 
 		}
@@ -104,15 +105,21 @@ namespace FormeleMethode
 			// Link shorter name to each state
 			foreach (string s in dfa.states)
 			{
-				dictionay.Add(s, $"q{index}");
-				index++;
+				if (s != "Fuik")
+				{
+					dictionay.Add(s, $"q{index}");
+					index++;
+				}
 			}
 
 			// Rename the states
 			SortedSet<string> newStates = new SortedSet<string>();
 			foreach (string state in dfa.states)
 			{
-				newStates.Add(dictionay[state]);
+				if (state != "Fuik")
+				{
+					newStates.Add(dictionay[state]);
+				}
 			}
 			dfa.states = newStates;
 
@@ -136,7 +143,9 @@ namespace FormeleMethode
 			HashSet<Transition<string>> newTransitions = new HashSet<Transition<string>>();
 			foreach (Transition<string> oldTransition in dfa.transitions)
 			{
-				newTransitions.Add(new Transition<string>(dictionay[oldTransition.GetFromState()], oldTransition.GetSymbol(), dictionay[oldTransition.GetToState()]));
+				newTransitions.Add(new Transition<string>(oldTransition.GetFromState() == "Fuik" ? oldTransition.GetFromState() : dictionay[oldTransition.GetFromState()],
+														  oldTransition.GetSymbol(),
+														  oldTransition.GetToState() == "Fuik" ? oldTransition.GetToState() : dictionay[oldTransition.GetToState()]));
 			}
 			dfa.transitions = newTransitions;
 
@@ -212,13 +221,12 @@ namespace FormeleMethode
 				{
 					if (t.GetSymbol() == symbol)
 					{
-						var ep = ndfa.EClosure(t.GetFromState());
-						var ep2 = ndfa.EClosure(t.GetToState());
-
-						newStates.UnionWith(ndfa.EClosure(t.GetToState())); // TODO see if this works correct
+						// TODO remove for debugging onlu
+						//var ep = ndfa.EClosure(t.GetFromState());
+						//var ep2 = ndfa.EClosure(t.GetToState());
+						newStates.UnionWith(ndfa.EClosure(t.GetToState()));
 					}
 				}
-
 			}
 
 			foreach (string subState in newStates)
@@ -245,7 +253,7 @@ namespace FormeleMethode
 
 			foreach (string state in states)
 			{
-				var ding = ndfa.GetTransitions(state);
+				var debugVar = ndfa.GetTransitions(state);
 				if (ndfa.GetTransitions(state).Count(t => t.GetSymbol() == symbol) > AmountOfCorrectRoutes)
 				{
 					AmountOfCorrectRoutes = ndfa.GetTransitions(state).Count(t => t.GetSymbol() == symbol);
@@ -282,7 +290,7 @@ namespace FormeleMethode
 		/// <returns></returns>
 		public static Automata<string> MinimizeDfa(Automata<string> dfa)
 		{
-			dfa.ReverseAutomata(); // Gaat nog goed
+			dfa.ReverseAutomata();
 			dfa = ConvertToDFA(dfa);
 			dfa.ReverseAutomata();
 			return ConvertToDFA(dfa);
