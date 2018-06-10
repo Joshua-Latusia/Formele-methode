@@ -16,11 +16,11 @@ namespace FormeleMethode
 		/// </summary>
 		public enum Operator { PLUS, STAR, OR, DOT, ONE };
 
-		Operator o;
-		string terminals;
+		public Operator o;
+		public string terminals;
 
-		RegExpression left;
-		RegExpression right;
+		public RegExpression left;
+		public RegExpression right;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="RegExp"/> class.
@@ -115,7 +115,15 @@ namespace FormeleMethode
 			// Remove spaces
 			regexString = regexString.Replace(" ", String.Empty);
 
-			for (int i = 0; i < regexString.Length; i++)
+			// Seperate all terminals
+			char[] seperators = { '+', '*', '|', '(', ')' };
+			List<string> terminalParts = regexString.Split(seperators).ToList();
+			terminalParts.RemoveAll(x => x == String.Empty);
+			int terminalIndex = 0;
+			int maxTerminals = terminalParts.Count();
+
+			int i = 0;
+			while (i < regexString.Length)
 			{
 				char currentChar = regexString[i];
 
@@ -180,22 +188,117 @@ namespace FormeleMethode
 				}
 				else if (currentChar == '|')
 				{
-					regex = regex.Or(new RegExpression(regexString[i + 1].ToString()));
+					regex = regex.Or(new RegExpression(terminalParts[terminalIndex].ToString()));
+					terminalIndex++;
 					i++;
 				}
 				else
 				{
 					if (regex.terminals == "" && regex.o == Operator.ONE)
 					{
-						regex.terminals = currentChar.ToString();
+						regex.terminals = terminalParts[terminalIndex];
+
+						// Skip rest of the terminal part in the loop
+						int num = regex.terminals.Count();
+						i += terminalParts[terminalIndex].Length - 1;
+						terminalIndex++;
 					}
 					else
 					{
-						regex = regex.Dot(new RegExpression(currentChar.ToString()));
+						//regex = regex.Dot(new RegExpression(currentChar.ToString()));
 					}
 				}
-
+				i++;
 			}
+
+
+			//for (int i = 0; i < regexString.Length; i++)
+			//{
+			//	char currentChar = regexString[i];
+
+			//	// For everything between ( )
+			//	if (currentChar == '(')
+			//	{
+			//		int closingBracketPosition = -1;
+			//		int bracketCount = 0;
+			//		for (int j = i + 1; i < regexString.Length; j++)
+			//		{
+			//			if (regexString[j] == '(') bracketCount++;
+
+			//			// We found the matching closing bracket
+			//			if (regexString[j] == ')' && bracketCount == 0)
+			//			{
+			//				closingBracketPosition = j;
+			//				break;
+			//			}
+			//			if (regexString[j] == ')' && bracketCount != 0)
+			//			{
+			//				bracketCount--;
+			//			}
+			//		}
+
+			//		// Get the regex for the part between  ()
+			//		string between = regexString.Substring(i + 1, closingBracketPosition - 1 - i);
+			//		RegExpression regExpression = StringToRegExpression(new RegExpression(), between);
+
+			//		// Look for the part after closing bracket 
+			//		if (closingBracketPosition + 1 < regexString.Length)
+			//		{
+			//			i = closingBracketPosition + 1;
+			//			currentChar = regexString[i];
+			//			if (currentChar == '+')
+			//			{
+			//				regExpression = regExpression.Plus();
+			//			}
+			//			else if (currentChar == '*')
+			//			{
+			//				regExpression = regExpression.Star();
+			//			}
+			//		}
+
+			//		if (regex.terminals == "" && regex.o == Operator.ONE)
+			//		{
+			//			regex = regExpression;
+			//		}
+			//		else
+			//		{
+			//			regex = regex.Dot(regExpression);
+			//		}
+			//	}
+
+			//	// For all the operators not related to ()
+			//	else if (currentChar == '+')
+			//	{
+			//		regex = regex.Plus();
+			//	}
+			//	else if (currentChar == '*')
+			//	{
+			//		regex = regex.Star();
+			//	}
+			//	else if (currentChar == '|')
+			//	{
+			//		regex = regex.Or(new RegExpression(terminalParts[terminalIndex].ToString()));
+			//		terminalIndex++;
+			//		i++;
+			//	}
+			//	else
+			//	{
+			//		if (regex.terminals == "" && regex.o == Operator.ONE)
+			//		{
+			//			regex.terminals = terminalParts[terminalIndex];
+
+			//			// Skip rest of the terminal part in the loop
+			//			int num = regex.terminals.Count();
+			//			i += terminalParts[terminalIndex].Length - 1;
+			//			terminalIndex++;
+			//		}
+			//		else
+			//		{
+			//			//regex = regex.Dot(new RegExpression(currentChar.ToString()));
+			//		}
+			//	}
+
+			//}
 			return regex;
 		}
 

@@ -1,0 +1,49 @@
+digraph { 
+ "" [shape=none]
+ "1" [shape=doublecircle]
+
+ "" -> "0"
+ "0" -> "4"[label="$", weight="$"]; 
+ "5" -> "4"[label="$", weight="$"]; 
+ "5" -> "3"[label="$", weight="$"]; 
+ "0" -> "3"[label="$", weight="$"]; 
+ "4" -> "5"[label="a", weight="a"]; 
+ "3" -> "6"[label="$", weight="$"]; 
+ "7" -> "6"[label="$", weight="$"]; 
+ "7" -> "2"[label="$", weight="$"]; 
+ "3" -> "2"[label="$", weight="$"]; 
+ "6" -> "8"[label="$", weight="$"]; 
+ "6" -> "10"[label="$", weight="$"]; 
+ "9" -> "7"[label="$", weight="$"]; 
+ "11" -> "7"[label="$", weight="$"]; 
+ "8" -> "12"[label="$", weight="$"]; 
+ "13" -> "12"[label="$", weight="$"]; 
+ "13" -> "9"[label="$", weight="$"]; 
+ "12" -> "14"[label="a", weight="a"]; 
+ "14" -> "13"[label="a", weight="a"]; 
+ "10" -> "15"[label="b", weight="b"]; 
+ "15" -> "11"[label="a", weight="a"]; 
+ "2" -> "16"[label="$", weight="$"]; 
+ "17" -> "16"[label="$", weight="$"]; 
+ "17" -> "1"[label="$", weight="$"]; 
+ "16" -> "18"[label="$", weight="$"]; 
+ "16" -> "20"[label="$", weight="$"]; 
+ "19" -> "17"[label="$", weight="$"]; 
+ "21" -> "17"[label="$", weight="$"]; 
+ "18" -> "22"[label="$", weight="$"]; 
+ "18" -> "24"[label="$", weight="$"]; 
+ "23" -> "19"[label="$", weight="$"]; 
+ "25" -> "19"[label="$", weight="$"]; 
+ "22" -> "26"[label="a", weight="a"]; 
+ "26" -> "27"[label="b", weight="b"]; 
+ "27" -> "28"[label="b", weight="b"]; 
+ "28" -> "23"[label="a", weight="a"]; 
+ "24" -> "29"[label="b", weight="b"]; 
+ "29" -> "30"[label="a", weight="a"]; 
+ "30" -> "31"[label="a", weight="a"]; 
+ "31" -> "25"[label="b", weight="b"]; 
+ "20" -> "32"[label="b", weight="b"]; 
+ "32" -> "33"[label="b", weight="b"]; 
+ "33" -> "34"[label="b", weight="b"]; 
+ "34" -> "21"[label="b", weight="b"]; 
+}

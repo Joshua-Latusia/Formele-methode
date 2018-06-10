@@ -51,6 +51,7 @@
     <Compile Include="RegExpression.cs" />
     <Compile Include="TestAutomata.cs" />
     <Compile Include="TestRegExp.cs" />
+    <Compile Include="ThompsonConstruction.cs" />
     <Compile Include="Transition.cs" />
     <Compile Include="TransitionComparator.cs" />
   </ItemGroup>

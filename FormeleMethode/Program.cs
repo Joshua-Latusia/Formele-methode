@@ -44,9 +44,10 @@ namespace FormeleMethode
 			//new TestRegExp().TestLanguage();
 
 			// Parsing of string to RegExp object
-			CreateExampleRegExp();
+			//CreateExampleRegExp();
 
-
+			// Thompson construction
+			CreateExampleThompsonConstruction();
 
 			// So app doesn't close
 			Console.ReadLine();
@@ -172,7 +173,7 @@ namespace FormeleMethode
 			string regex1 = "(aa)*(aa)+" ;
 			RegExpression expression1 = new RegExpression(regex1);
 			Console.WriteLine($"Language (aa)*(aa)+ \n" +
-							  $"Language via toString method = {expression1.ToString()}\n";
+							  $"Language via toString method = {expression1.ToString()}\n");
 
 			// regex : a* (aa+ | ba*b ) * (abba | baab | bbbb)+
 			string regex2 = "a* (aa+ | ba*b ) * (abba | baab | bbbb)+";
@@ -187,6 +188,39 @@ namespace FormeleMethode
 			Console.WriteLine("Language (a*b*)+ (bb*b | ab*baa)+ \n" +
 							  $"Language via toString method = {expression3.ToString()}\n" +
 							  $"Word asdadsad \n\n");
+		}
+
+		/// <summary>
+		/// Creates the example thompson construction.
+		/// </summary>
+		public static void CreateExampleThompsonConstruction()
+		{
+			// regex : (aa)*(aa)+
+			string regex1 = "(aa)*(aa)+";
+			RegExpression expression1 = new RegExpression(regex1);
+			Automata<string> ndfa1 = ThompsonConstruction.RegExpToNDFA(expression1);
+
+			ndfa1.GenerateGraphFile("ThompsonNDFA1");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ThompsonNDFA1", "ThompsonNDFA1Pic");
+
+			//// regex : a(a|b)*
+			string regex2 = "a(a|b)*";
+			RegExpression expression2 = new RegExpression(regex2);
+			Automata<string> ndfa2 = ThompsonConstruction.RegExpToNDFA(expression2);
+
+			ndfa2.GenerateGraphFile("ThompsonNDFA2");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ThompsonNDFA2", "ThompsonNDFA2Pic");
+
+			// regex : a*(aa+|(ba))* (abba|baab|bbbb)+
+			string regex3 = "a*(aa+|(ba))* (abba|baab|bbbb)+";
+			RegExpression expression3 = new RegExpression(regex3);
+			Automata<string> ndfa3 = ThompsonConstruction.RegExpToNDFA(expression3);
+
+			ndfa3.GenerateGraphFile("ThompsonNDFA3");
+			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\ThompsonNDFA3", "ThompsonNDFA3Pic");
+
+
+
 		}
 	}
 }

@@ -1,0 +1,17 @@
+digraph { 
+ "" [shape=none]
+ "1" [shape=doublecircle]
+
+ "" -> "0"
+ "0" -> "3"[label="$", weight="$"]; 
+ "4" -> "3"[label="$", weight="$"]; 
+ "4" -> "2"[label="$", weight="$"]; 
+ "0" -> "2"[label="$", weight="$"]; 
+ "3" -> "5"[label="a", weight="a"]; 
+ "5" -> "4"[label="a", weight="a"]; 
+ "2" -> "6"[label="$", weight="$"]; 
+ "7" -> "6"[label="$", weight="$"]; 
+ "7" -> "1"[label="$", weight="$"]; 
+ "6" -> "8"[label="a", weight="a"]; 
+ "8" -> "7"[label="a", weight="a"]; 
+}

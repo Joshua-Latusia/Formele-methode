@@ -1,15 +1,15 @@
 digraph { 
  "" [shape=none]
+ "q0" [shape=doublecircle]
+ "q3" [shape=doublecircle]
 
  "" -> "q1"
- "q1" -> "q4"[label="a", weight="a"]; 
- "q4" -> "q0"[label="a", weight="a"]; 
- "q4" -> "q3"[label="b", weight="b"]; 
- "q3" -> "q2"[label="a", weight="a"]; 
- "q2" -> "q4"[label="a", weight="a"]; 
- "q2" -> "q3"[label="b", weight="b"]; 
- "q3" -> "q0"[label="b", weight="b"]; 
+ "q1" -> "q1"[label="a", weight="a"]; 
  "q1" -> "q0"[label="b", weight="b"]; 
- "q0" -> "q0"[label="a", weight="a"]; 
- "q0" -> "q0"[label="b", weight="b"]; 
+ "q0" -> "q3"[label="a", weight="a"]; 
+ "q3" -> "q0"[label="a", weight="a"]; 
+ "q3" -> "q1"[label="b", weight="b"]; 
+ "q0" -> "q2"[label="b", weight="b"]; 
+ "q2" -> "q1"[label="a", weight="a"]; 
+ "q2" -> "q1"[label="b", weight="b"]; 
 }
