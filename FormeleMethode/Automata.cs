@@ -86,12 +86,51 @@ namespace FormeleMethode
 		}
 
 		// geefTaalTotLengte TODO
-		public void PrintLanguage(int maxLength)
+		public List<string> GetLanguage(int maxLength)
 		{
-			//List<string> taal = NextLetter(0, new char[maxLength], new List<string>(), maxLength);
+			List<string> language = new List<string>();
+			GenerateWords(String.Empty, maxLength, ref language, true);
 
-			//Console.WriteLine($"Printing language :\n " +
-			//				  $"{String.Join(",", taal.OrderBy(q => q).ToList())}\n");
+			return language;
+		}
+
+		// geefNietTaalTotLengte
+		public List<string> GetNotLanguage(int maxLength)
+		{
+			List<string> notLanguage = new List<string>();
+			GenerateWords(String.Empty, maxLength, ref notLanguage, false);
+			return notLanguage;
+		}
+
+		/// <summary>
+		/// Generates the words in the language or not language
+		/// isLangue is bool for determin if it is the language or notLanguage
+		/// </summary>
+		/// <param name="word">The word.</param>
+		/// <param name="maxLength">The maximum length.</param>
+		/// <param name="wordList">The word list.</param>
+		/// <param name="isLanguage">if set to <c>true</c> [is language].</param>
+		private void GenerateWords(string word, int maxLength, ref List<string> wordList, bool isLanguage)
+		{
+			// Stop generating words
+			if (word.Length >= maxLength)
+				return;
+
+			for (int i = 0; i < symbols.Count; i++)
+			{
+				var newWord = word + symbols.ToList()[i];
+
+				// If we search language and word is accepted add it
+				if (Accept(newWord) && isLanguage)
+				{
+					wordList.Add(newWord);
+				}
+				else if (!Accept(newWord) && !isLanguage)
+				{
+					wordList.Add(newWord);
+				}
+				GenerateWords(newWord, maxLength, ref wordList, isLanguage);
+			}
 		}
 
 		/// <summary>
@@ -127,7 +166,7 @@ namespace FormeleMethode
 		/// </summary>
 		/// <param name="s">The s.</param>
 		/// <returns></returns>
-		public bool Accept(string s)
+		public bool Accept(string s, bool printTransitions = false)
 		{
 			char[] charArray = s.ToCharArray();
 
@@ -135,7 +174,8 @@ namespace FormeleMethode
 			foreach (T startState in startStates)
 			{
 				T currentState = startState;
-				Console.WriteLine($"Start State : {currentState}  \nString : {s}");
+				if(printTransitions)
+					Console.WriteLine($"Start State : {currentState}  \nString : {s}");
 				CharEnumerator c = s.GetEnumerator();
 
 				// Check all chars
@@ -143,7 +183,7 @@ namespace FormeleMethode
 				{
 					// search for matching transition with fromState = currenState && symbol = c.Current
 					Transition<T> transition = new Transition<T>(currentState, c.Current);
-					currentState = GetMatchingState(transition);
+					currentState = GetMatchingState(transition, printTransitions);
 
 					if (currentState == null)
 						break;
@@ -162,13 +202,14 @@ namespace FormeleMethode
 		}
 
 		// Returns matching state or null
-		public T GetMatchingState(Transition<T> t2)
+		public T GetMatchingState(Transition<T> t2, bool printTransitions = false)
 		{
 			foreach (Transition<T> t in transitions)
 			{
 				if (t2.CompareTo(t) == 1)
 				{
-					Console.WriteLine(t.ToString());
+					if(printTransitions)
+						Console.WriteLine(t.ToString());
 					return t.GetToState();
 				}
 			}
