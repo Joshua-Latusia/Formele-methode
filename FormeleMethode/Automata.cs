@@ -325,6 +325,7 @@ namespace FormeleMethode
 
 		/// <summary>
 		/// Reverses the DFA or NDFA.
+		/// 3 REVERSE
 		/// All transitions are reversed
 		/// Start states and end states switch
 		/// </summary>

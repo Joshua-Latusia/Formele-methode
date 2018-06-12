@@ -47,7 +47,7 @@ namespace FormeleMethode
 			//CreateExampleRegExp();
 
 			// Thompson construction
-			CreateExampleThompsonConstruction();
+			//CreateExampleThompsonConstruction();
 
 			// So app doesn't close
 			Console.ReadLine();
@@ -146,22 +146,34 @@ namespace FormeleMethode
 			Automata<string> exmapleDFA1 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaExample1");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaExample1", "dfaExample1Pic");
 			Console.WriteLine($"Example DFA1 is a dfa = {exmapleDFA1.IsDFA()}\n\n");
-			Console.WriteLine($"DFA1 Word: abaa Should be accepted      Accepted: {exmapleDFA1.Accept("abaa")}");
-			Console.WriteLine($"DFA1 Word: abba Shouldn't be accepted      Accepted: {exmapleDFA1.Accept("abba")}");
+			Console.WriteLine($"DFA1 Word: abaa Should be accepted      Accepted: {exmapleDFA1.Accept("abaa",true)}");
+			Console.WriteLine($"DFA1 Word: abba Shouldn't be accepted      Accepted: {exmapleDFA1.Accept("abba", true)}");
 
-			exmapleDFA1.PrintLanguage(4);
+			// 2A GetAcceptedLanguage
+			Console.WriteLine($"\n\nLanguage for DFA1 \n");
+			Console.WriteLine(String.Join(",", exmapleDFA1.GetLanguage(4).OrderBy(x => x)));
+
+			// 2B GetNotAcceptedLanguage
+			Console.WriteLine($"\n\nNot Language for DFA1\n");
+			Console.WriteLine(String.Join(",", exmapleDFA1.GetNotLanguage(4).OrderBy(x => x)));
 
 			Automata<string> exmapleDFA2 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaExample2");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaExample2", "dfaExample2Pic");
 			Console.WriteLine($"\n\nExample DFA2 is a dfa = {exmapleDFA2.IsDFA()}");
-			Console.WriteLine($"DFA2 Word: abab Should be accepted      Accepted: {exmapleDFA2.Accept("abab")}");
-			Console.WriteLine($"DFA2 Word: ababa Shouldn't be accepted      Accepted: {exmapleDFA2.Accept("ababa")}");
+			Console.WriteLine($"DFA2 Word: abab Should be accepted      Accepted: {exmapleDFA2.Accept("abab", true)}");
+			Console.WriteLine($"DFA2 Word: ababa Shouldn't be accepted      Accepted: {exmapleDFA2.Accept("ababa", true)}");
+
+			Console.WriteLine($"\n\nLanguage for DFA2 \n");
+			Console.WriteLine(String.Join(",", exmapleDFA2.GetLanguage(4).OrderBy(x => x)));
+
+			Console.WriteLine($"\n\nNot Language for DFA2\n");
+			Console.WriteLine(String.Join(",", exmapleDFA2.GetNotLanguage(4).OrderBy(x => x)));
 
 			Automata<string> exmapleDFA3 = TestAutomata.ReadGraphFile(@".\..\..\graphviz\dotfiles\dfaExample3");
 			FileDotEngine.Run(@".\..\..\graphviz\dotfiles\dfaExample3", "dfaExample3Pic");
 			Console.WriteLine($"\n\nExample DFA2 is a dfa = {exmapleDFA3.IsDFA()}");
-			Console.WriteLine($"DFA3 Word: bbbba  Should be accepted      Accepted: {exmapleDFA3.Accept("bbbba")}");
-			Console.WriteLine($"DFA4 Word: aaaba Shouldn't be accepted      Accepted: {exmapleDFA3.Accept("aaaba")}");
+			Console.WriteLine($"DFA3 Word: bbbba  Should be accepted      Accepted: {exmapleDFA3.Accept("bbbba", true)}");
+			Console.WriteLine($"DFA4 Word: aaaba Shouldn't be accepted      Accepted: {exmapleDFA3.Accept("aaaba", true)}");
 		}
 
 		/// <summary>
